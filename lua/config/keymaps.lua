@@ -9,4 +9,5 @@ colors.apply()
 vim.keymap.set("n", "<leader>ut", function()
   colors.toggle()
 end, { desc = "Toggle light/dark theme" })
-
+-- skkeleton起動
+vim.keymap.set({ "i", "c" }, "<C-j>", "<Plug>(skkeleton-enable)")

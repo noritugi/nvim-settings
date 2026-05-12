@@ -1,4 +1,3 @@
--- vim.g.vsnip_snippet_dir = vim.fn.expand("~/.config/nvim/snippets")
 require("config.lazy")
 require("config.filetype")
 require("config.keymaps")

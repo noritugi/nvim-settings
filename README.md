@@ -2,8 +2,22 @@
 
 主にWindowsでの[Neovide](https://neovide.dev)で使うことを想定した設定ファイル群。
 
-## 必要なもの
+## 初期設定
+リポジトリクローン
+```
+git clone https://github.com/noritugi/nvim-settings.git $HOME/.config/nvim
+```
 
+ジャンクション作成
+
+```
+New-Item -ItemType Junction -Path "$HOME\AppData\Local\nvim" -Target "$HOME\.config\nvim"
+```
+
+### 必要なもの
+
+* neovim
+* lazygit
 * lua51
 * luarocks
 * ripgrep
@@ -13,11 +27,33 @@
 
 すべてscoopでインストールできる。Neovideもインストールできる。
 ```
-scoop install lua51 luarocks ripgrep gcc make zoxide neovide
+scoop install neovim lazygit lua51 luarocks ripgrep gcc make zoxide neovide
 ```
 
 [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)にて、Windows Powershellではなく、  
 [PowerShell 7+](https://github.com/powershell/powershell)を前提としているため、これをインストールする。
+
+## Lazygit
+Git関係の設定が必要になる。``~/.gitconfig``になければ以下コマンドを実行する。
+```
+git config --global core.editor nvim
+```
+Lazygitの設定ファイルの場所は以下コマンドでわかる。
+```
+lazygit --print-config-dir
+```
+その中にある``config.yml``を編集する。``edit_nvim_remote.ps1``はこのリポジトリにあるのでそれを指定する。
+```yaml
+os:
+  edit: 'pwsh -NoProfile -File "$PathToScript\edit_nvim_remote.ps1" {{filename}} '
+  editAtLine: 'pwsh -NoProfile -File "$PathToScript\edit_nvim_remote.ps1" {{filename}} {{line}} '
+  openDirInEditor: 'pwsh -NoProfile -File "$PathToScript\edit_nvim_remote.ps1" {{dir}}'
+```
+詳しくは以下URLを参照のこと。
+
+* https://github.com/jesseduffield/lazygit/issues/3467#issuecomment-3393095703
+
+これでlazygit上でeキーで編集、CキーでnvimにてCOMMIT_EDITMSGの編集ができる。
 
 ## LSP関連
 
@@ -26,7 +62,6 @@ scoop install lua51 luarocks ripgrep gcc make zoxide neovide
 今後増える予定。
 
 ## SKK
-Neovideでのみskkeletonを使えるようにしてある。  
 辞書ファイルは ``~/.skk`` 配下に置く。  
 ``update_skk_dict.ps1`` で辞書ファイルを更新する。  
 ``update_skk_multi_dict.ps1`` もあるが、今のところ ``SKK-JISYO.L`` のみローカル環境で使用する。  
