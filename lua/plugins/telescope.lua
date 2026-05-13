@@ -34,6 +34,34 @@ return {
         defaults = {
           path_display = { "smart" },
 
+          -- 検索除外するファイル
+          -- Windows環境は"/"ではなく"\\"
+          -- https://github.com/AstroNvim/AstroNvim/issues/184#issuecomment-1896421457
+          file_ignore_patterns = {
+            -- Files
+            "%.a",
+            "%.class",
+            "%.jpg",
+            "%.jpeg",
+            "%.JPG",
+            "%.png",
+            "%.PNG",
+            "%.webp",
+            "%.WEBP",
+            "%.ico",
+            "%.mkv",
+            "%.mp4",
+            "%.o",
+            "%.out",
+            "%.pdf",
+            "%.zip",
+            -- Directories
+            ".cache",
+            ".git\\",
+            ".github\\",
+            ".node_modules\\",
+          },
+
           mappings = {
             i = {
               ["<esc>"] = actions.close,
