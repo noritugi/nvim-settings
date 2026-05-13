@@ -10,11 +10,11 @@ return {
         globalDictionaries = {
           vim.fn["expand"]('~/.skk/SKK-JISYO.L'),
         },
-	userDictionary = vim.fn["expand"]('~/.skk/user/SKK-JISYO.user'),
-	eggLikeNewline = true,
-	registerConvertResult = true, 
-	showCandidatesCount = 2,
-	keepState = true,
+        userDictionary = vim.fn["expand"]('~/.skk/user/SKK-JISYO.user'),
+        eggLikeNewline = true,
+        registerConvertResult = true, 
+        showCandidatesCount = 2,
+        keepState = true,
       })
     end,
   },
