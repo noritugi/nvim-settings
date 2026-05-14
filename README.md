@@ -20,6 +20,7 @@ New-Item -ItemType Junction -Path "$HOME\AppData\Local\nvim" -Target "$HOME\.con
 * lazygit
 * lua51
 * luarocks
+* deno
 * ripgrep
 * gcc
 * make
@@ -27,7 +28,7 @@ New-Item -ItemType Junction -Path "$HOME\AppData\Local\nvim" -Target "$HOME\.con
 
 すべてscoopでインストールできる。Neovideもインストールできる。
 ```
-scoop install neovim lazygit lua51 luarocks ripgrep gcc make zoxide neovide
+scoop install neovim lazygit lua51 luarocks deno ripgrep gcc make zoxide neovide
 ```
 
 [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)にて、Windows Powershellではなく、  
@@ -113,3 +114,19 @@ New-Item -ItemType Junction -Path "C:\path\to\home\.skk\user" -Target "C:\path\t
 | `<Tab>`         | see `telescope.nvim` | Toggle selection and move to next selection                                      |
 | `<S-Tab>`       | see `telescope.nvim` | Toggle selection and move to prev selection                                      |
 | `<bs>/`         | backspace            | With an empty prompt, goes to parent dir. Otherwise acts normally                |
+
+## nvim-surround
+[nvim-surround usage](https://github.com/kylechui/nvim-surround#rocket-usage)
+
+```help
+    Old text                    Command         New text
+--------------------------------------------------------------------------------
+    surr*ound_words             ysiw)           (surround_words)
+    surr*ound_words             ysiw(           ( surround_words )
+    *make strings               ys$"            "make strings"
+    [delete ar*ound me!]        ds]             delete around me!
+    remove <b>HTML t*ags</b>    dst             remove HTML tags
+    'change quot*es'            cs'"            "change quotes"
+    <b>or tag* types</b>        csth1<CR>       <h1>or tag types</h1>
+    delete(functi*on calls)     dsf             function calls
+```
