@@ -25,10 +25,11 @@ New-Item -ItemType Junction -Path "$HOME\AppData\Local\nvim" -Target "$HOME\.con
 * gcc
 * make
 * zoxide
+* tree-sitter-cli
 
 すべてscoopでインストールできる。Neovideもインストールできる。
 ```
-scoop install neovim lazygit lua51 luarocks deno ripgrep gcc make zoxide neovide
+scoop install neovim lazygit lua51 luarocks deno ripgrep gcc make zoxide neovide tree-sitter
 ```
 
 [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)にて、Windows Powershellではなく、  
@@ -129,4 +130,19 @@ New-Item -ItemType Junction -Path "C:\path\to\home\.skk\user" -Target "C:\path\t
     'change quot*es'            cs'"            "change quotes"
     <b>or tag* types</b>        csth1<CR>       <h1>or tag types</h1>
     delete(functi*on calls)     dsf             function calls
+```
+
+## nvim-treesitter
+2026年5月現在 [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) は
+Public archiveになっていて、 [Neovim本体 - treesitter](https://neovim.io/doc/user/treesitter/) に取り込まれるようであるが、  
+過渡期のようである。参考リンクをいくつか提示する。
+
+* https://zenn.dev/ktrysmt/scraps/2741536726495d
+* https://zenn.dev/tttol/articles/2881b678ee005b
+* https://zeta.ws/nvim/
+* https://blog.atusy.net/2025/08/10/nvim-treesitter-main-branch/
+
+``tree-sitter-cli`` がないとパースに失敗するらしいのでインストールしておく。
+```
+scoop install tree-sitter
 ```
