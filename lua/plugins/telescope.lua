@@ -201,6 +201,21 @@ return {
       end, {
         desc = "Zoxide",
       })
+
+      ----------------------------------------------------------------------
+      -- TelescopePromptでskkeleton入力
+      ----------------------------------------------------------------------
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "TelescopePrompt",
+        callback = function()
+          -- insert mode に入ったら <C-j>でskkeleton ON
+          vim.keymap.set("i", "<C-j>", "<Plug>(skkeleton-toggle)", {
+            buffer = true,
+          })
+          -- Telescopeを開いた瞬間に有効化したい場合
+          -- vim.fn["skkeleton#enable"]()
+        end,
+      })
     end,
   },
 
