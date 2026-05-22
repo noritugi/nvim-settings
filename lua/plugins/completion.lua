@@ -13,10 +13,10 @@ return {
         preset = "default",
 
         -- ["<C-n>"] = { "select_next" },
-	-- ["<C-p>"] = { "select_prev" },
+	      -- ["<C-p>"] = { "select_prev" },
 
         ["<Tab>"] = {
-	  "accept",
+	        "accept",
           "select_next",
           "snippet_forward",
           "fallback",
@@ -43,13 +43,19 @@ return {
         preset = "luasnip",
       },
 
+      -- lazyvimだとsources.default = {} にしても無効にはならないらしい
+      -- https://github.com/saghen/blink.cmp/discussions/613#discussioncomment-11631943
       sources = {
-        default = {
-          "path",
-          "lsp",
-          "snippets",
-          "buffer",
+        per_filetype = {
+          lua = { "lsp", "buffer", "path", "snippets" },
+          markdown = { "path", "snippets" },
         },
+        transform_items = function(ctx, items)
+          -- Remove the "Text" source from lsp autocomplete
+          return vim.tbl_filter(function(item)
+            return item.kind ~= vim.lsp.protocol.CompletionItemKind.Text
+          end, items)
+        end,
       },
 
       fuzzy = {
