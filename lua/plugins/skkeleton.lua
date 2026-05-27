@@ -9,6 +9,7 @@ return {
       vim.fn["skkeleton#config"]({
         globalDictionaries = {
           vim.fn["expand"]('~/.skk/SKK-JISYO.L'),
+          vim.fn["expand"]('~/.skk/merged/mergedict.txt'),
         },
         userDictionary = vim.fn["expand"]('~/.skk/user/SKK-JISYO.user'),
         eggLikeNewline = true,
