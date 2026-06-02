@@ -24,12 +24,12 @@ New-Item -ItemType Junction -Path "$HOME\AppData\Local\nvim" -Target "$HOME\.con
 * ripgrep
 * gcc
 * make
-* zoxide
+* fd
 * tree-sitter-cli
 
 すべてscoopでインストールできる。Neovideもインストールできる。
 ```
-scoop install neovim lazygit lua51 luarocks deno ripgrep gcc make zoxide neovide tree-sitter
+scoop install neovim lazygit lua51 luarocks deno ripgrep gcc make fd neovide tree-sitter
 ```
 
 [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)にて、Windows Powershellではなく、  
@@ -62,6 +62,12 @@ os:
 * lua-language-server
 
 今後増える予定。
+
+## mermaid
+```
+scoop install nodejs-lts
+npm install -g @mermaid-js/mermaid-cli
+```
 
 ## SKK
 辞書ファイルは ``~/.skk`` 配下に置く。  
