@@ -1,6 +1,7 @@
 return {
   {
     "renerocksai/telekasten.nvim",
+    enabled = false,
     dependencies = { "nvim-telescope/telescope.nvim" },
     keys = {
       { "<leader>zn", "<cmd>Telekasten new_note<cr>" },

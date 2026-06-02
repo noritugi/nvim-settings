@@ -9,7 +9,8 @@ vim.keymap.set({ "n", "i", "v" }, "<C-s>", save, { desc = "Save" })
 vim.keymap.set("v", "<C-c>", copy, { silent = true, desc = "Copy" })
 vim.keymap.set({ "n", "i", "v", "c", "t" }, "<C-v>", paste, { silent = true, desc = "Paste" })
 -- フォント
-vim.o.guifont = "HackGen Console NF:h12"
+-- vim.o.guifont = "HackGen Console NF:h12"
+vim.o.guifont = "HackGen Console NF,Cascadia Code,Cascadia Mono,Consolas,monospace:h12"
 -- タイトルバー
 vim.g.neovide_title_background_color = string.format(
     "%x",
