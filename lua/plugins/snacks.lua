@@ -26,7 +26,7 @@ return {
           -- preset = "sidebar"
           -- preset = "ivy"
           -- preset = "dropdown"
-          layout = { preset = "default" },
+          layout = { preset = "vertical" },
         },
         files = {
           hidden = true,

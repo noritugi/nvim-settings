@@ -48,7 +48,7 @@ return {
       sources = {
         per_filetype = {
           lua = { "lsp", "buffer", "path", "snippets" },
-          markdown = { "path", "snippets" },
+          markdown = { "lsp", "path", "snippets" },
         },
         transform_items = function(ctx, items)
           -- Remove the "Text" source from lsp autocomplete

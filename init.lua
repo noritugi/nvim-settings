@@ -4,6 +4,7 @@ require("config.keymaps")
 require("config.colorscheme")
 require("config.snippets")
 require("config.shell")
+require("config.autocmd")
 if vim.g.neovide then
     -- Put anything you want to happen only in Neovide here
     require("config.neovide")

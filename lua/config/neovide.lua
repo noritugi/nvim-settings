@@ -21,3 +21,6 @@ vim.g.neovide_title_text_color = "pink"
 vim.g.neovide_corner_preference = "round"
 -- skkeletonを使うためIMEはオフ
 vim.g.neovide_input_ime = false
+-- Animated windows
+vim.g.neovide_position_animation_length = 0.2
+vim.g.neovide_scroll_animation_length = 0.2
