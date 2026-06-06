@@ -19,7 +19,8 @@ return {
       ui_select = true,
       sources = {
         projects = {
-          format = "text",
+          -- Neovideで表示できなかったため、"text"にしていた。 
+          -- format = "text",
           -- layout Presets
           -- preset = "default"
           -- preset = "vertical"
