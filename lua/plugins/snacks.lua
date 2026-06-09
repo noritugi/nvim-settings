@@ -12,15 +12,14 @@ return {
     explorer = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
-    image = { enabled = false },
+    image = { enabled = true },
     picker = {
       enabled = true,
       -- これ使えばlsp経由のrenameとかもそれっぽいUIで出来る
       ui_select = true,
       sources = {
         projects = {
-          -- Neovideで表示できなかったため、"text"にしていた。 
-          -- format = "text",
+          format = "text",
           -- layout Presets
           -- preset = "default"
           -- preset = "vertical"
