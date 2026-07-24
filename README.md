@@ -26,10 +26,11 @@ New-Item -ItemType Junction -Path "$HOME\AppData\Local\nvim" -Target "$HOME\.con
 * make
 * fd
 * tree-sitter-cli
+* delta
 
 すべてscoopでインストールできる。Neovideもインストールできる。
 ```
-scoop install neovim lazygit lua51 luarocks deno ripgrep gcc make fd neovide tree-sitter
+scoop install neovim lazygit lua51 luarocks deno ripgrep gcc make fd neovide tree-sitter delta
 ```
 
 [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)にて、Windows Powershellではなく、  
