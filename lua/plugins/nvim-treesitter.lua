@@ -4,6 +4,7 @@ return {
   branch = "main",
   event = { "BufReadPre", "BufNewFile" },
   build = ':TSUpdateSync',
+  cmd  = { "TSUpdateSync", "TSUpdate" },
   config = function()
     local ts = require('nvim-treesitter')
 
