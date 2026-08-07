@@ -27,6 +27,9 @@ return {
           -- preset = "ivy"
           -- preset = "dropdown"
           layout = { preset = "vertical" },
+          dev = {
+            "~/work/",
+          },
         },
         files = {
           hidden = true,
