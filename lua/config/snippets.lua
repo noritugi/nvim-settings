@@ -2,5 +2,8 @@
 -- スニペットを置くディレクトリ
 --
 require("luasnip.loaders.from_lua").load({
-  paths = "~/.config/nvim/snippets",
+  paths = {
+    vim.fn.expand("~/.config/nvim/snippets"),
+    vim.fn.expand("~/.config/local-snippets"),
+  },
 })
